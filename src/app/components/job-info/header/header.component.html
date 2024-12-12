@@ -1,0 +1,32 @@
+<div class="relative overflow-hidden">
+  <!----------- background image ----------->
+  <div class="header-bg" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+    <!----------------- logo ----------------->s
+    <!-- <a href="https://dahmen-personal.de/" target="_blank" rel="noopener">
+      <img
+        src="https://www.fairsolutions-aachen.de/wp-content/webp-express/webp-images/uploads/2023/08/fair_solutions_logo2.png.webp"
+        alt="Dahmen Personalservice GmbH"
+        class="logo"
+      />
+    </a> -->
+
+    <!-------------- bottom part ------------->
+    <div class="header-buttom-background">
+      <h1 class="header-title">{{title}}</h1>
+
+      <!------ features ------>
+      <ul class="features-list">
+        @for (feature of features; track $index) {
+        <li class="feature">
+          <img [src]="feature.icon" class="feature-img" alt />
+
+          <div>
+            <span class="feature-small-text">{{ feature.smallText }}</span>
+            {{ feature.text }}
+          </div>
+        </li>
+        }
+      </ul>
+    </div>
+  </div>
+</div>

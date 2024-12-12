@@ -1,0 +1,76 @@
+<div class="footer">
+  <div class="curved-img"></div>
+
+  <div class="footer-content">
+    <!--------------- logos --------------->
+    <div class="col-span-full xl:col-auto row-span-5 xl:row-auto">
+      <img
+        src="https://www.fairsolutions-aachen.de/wp-content/webp-express/webp-images/uploads/2023/08/fair_solutions_logo2.png.webp"
+        alt
+        class="w-[180px] md:w-[200px] xl:w-[160px] mb-12"
+      />
+
+      <img
+        src="https://www.fairsolutions-aachen.de/wp-content/webp-express/webp-images/uploads/2023/07/GVP-Logo_Mitglied_quer_weiss_RGB1-300x142.png.webp"
+        alt
+        class="w-[200px] md:w-[200px] xl:w-[160px]"
+      />
+    </div>
+
+    <!--------------- links --------------->
+    <div class="">
+      <h3 class="footer-title">Links</h3>
+
+      <div class="footer-links">
+        @for (link of footerLinks; track $index) {
+        <a [href]="link.url" class="footer-link">{{ link.label }}</a>
+        }
+      </div>
+    </div>
+
+    <!--------------- company --------------->
+    <div class="">
+      <h3 class="footer-title">Company</h3>
+
+      <div class="footer-links">
+        @for (link of companyLinks; track $index) {
+        <a [href]="link.url" class="footer-link">{{ link.label }}</a>
+        }
+      </div>
+    </div>
+
+    <!--------------- legal --------------->
+    <div class="col-span-full md:col-auto">
+      <h3 class="footer-title">Datenschutz & Impressum</h3>
+
+      <div class="footer-links">
+        @for (link of legalLinks; track $index) {
+        <a [href]="link.url" class="footer-link">{{ link.label }}</a>
+        }
+      </div>
+    </div>
+
+    <!--------------- Kontakt --------------->
+    <div class="col-span-full md:col-auto">
+      <h3 class="footer-title">Kontakt</h3>
+
+      <div class="footer-links">
+        @for (link of contacts; track $index) {
+        <a [href]="link.url" class="footer-link">{{ link.label }}</a>
+        }
+      </div>
+
+      <div class="social-media-icons-container">
+        @for (link of socialMedia; track $index) {
+        <a [href]="link.url" class="social-media-icon">
+          <i [class]="link.icon + ' fab '"></i>
+        </a>
+        }
+      </div>
+    </div>
+  </div>
+
+  <div
+    class="w-full xl:w-[80%] h-[1px] bg-[#51607D] xl:mt-10 mb-5 mx-auto"
+  ></div>
+</div>

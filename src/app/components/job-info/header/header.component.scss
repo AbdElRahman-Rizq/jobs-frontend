@@ -1,0 +1,31 @@
+.header-bg {
+  @apply relative w-full max-w-full md:max-w-[1440px] min-h-[600px] h-auto md:min-h-[800px]  bg-cover bg-no-repeat bg-center lg:m-auto;
+}
+
+.logo {
+  @apply absolute right-[8vw] md:right-[5%] lg:right-[9%] top-[5%] md:top-[7%] w-[35%] md:w-[25%] lg:w-[200px] bg-light-gray bg-opacity-45 rounded-md p-5 object-contain;
+}
+
+.header-buttom-background {
+  @apply absolute bottom-0 h-[350px] md:h-[55%] lg:h-[50%] w-full md:max-w-[1440px] p-[20px_0_60px_0] bg-light-gray bg-opacity-70 text-center text-white;
+}
+
+.header-title {
+  @apply text-[22px] mb-[10px] md:mb-[18px] md:text-[45px] font-bold;
+}
+
+.features-list {
+  @apply flex flex-wrap items-center md:justify-center  p-1 max-w-full md:w-[75%] xl:w-[1000px] mx-auto leading-[1.2];
+}
+
+.feature {
+  @apply inline-flex  w-fit m-[8px_20px] md:m-[0_15px_25px_15px] text-[80%] md:text-[24px] text-left;
+}
+
+.feature-img {
+  @apply mr-[10px] h-[30px] md:h-[40px] w-[30px] md:w-[40px] object-contain;
+}
+
+.feature-small-text {
+  @apply block text-xs md:text-sm;
+}

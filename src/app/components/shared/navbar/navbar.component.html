@@ -1,0 +1,64 @@
+<nav class="fixed top-0 w-full h-[6rem] bg-secondary-color border-b border-white/20 z-20 font-inter">
+  <div
+    class="relative max-w-[1440px] w-full h-full py-3 pl-3 pr-[1%] xl:pr-[10%] mx-auto flex items-center justify-between">
+    <!----------------- logo ----------------->
+    <div class="h-full">
+      <a href="https://www.fairsolutions-aachen.de/" rel="noopener">
+        <img
+          src="https://www.fairsolutions-aachen.de/wp-content/webp-express/webp-images/uploads/2023/08/fair_solutions_logo2.png.webp"
+          alt="Dahmen Personalservice GmbH" class="h-full" />
+      </a>
+    </div>
+
+    <button data-collapse-toggle="navbar-dropdown" type="button"
+      class="absolute flex top-[25%] right-[2%] items-center p-2 w-10 h-10 justify-center text-sm  rounded-lg lg:hidden hover:bg-[#101828] hover:bg-opacity-50"
+      aria-controls="navbar-dropdown" aria-expanded="false">
+      <span class="sr-only">Open main menu</span>
+      <svg class="w-5 h-5" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 17 14">
+        <path stroke="white" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+          d="M1 1h15M1 7h15M1 13h15" />
+      </svg>
+    </button>
+
+    <div
+      class="hidden absolute top-[70%] lg:static w-full lg:w-[75%] lg:flex justify-between bg-white lg:bg-transparent rounded-[30px] lg:rounded-none shadow-xl lg:shadow-none"
+      id="navbar-dropdown">
+      <ul
+        class="w-full flex flex-col font-medium p-4 lg:p-0  lg:flex-row lg:justify-between lg:items-center lg:mt-0 lg:mb-3 lg:border-0">
+        @for (link of links; track $index) { @if (!link.dropdown) {
+        <li>
+          <a [href]="link.url" rel="noopener"
+            [class]="link.label === 'Jobbörse 2' ? 'nav-link nav-link-active' : 'nav-link'">{{ link.label }}</a>
+        </li>
+        } @else {
+        <li>
+          <a id="dropdownNavbarLink" class="navlink-dropdown" [href]="link.url" rel="noopener"
+            (mouseenter)="showDropdown()">
+            {{ link.label }}
+
+            <svg class="ms-2.5" xmlns="http://www.w3.org/2000/svg" height="14" width="8.75" viewBox="0 0 320 512">
+              <path fill="currentColor"
+                d="M137.4 374.6c12.5 12.5 32.8 12.5 45.3 0l128-128c9.2-9.2 11.9-22.9 6.9-34.9s-16.6-19.8-29.6-19.8L32 192c-12.9 0-24.6 7.8-29.6 19.8s-2.2 25.7 6.9 34.9l128 128z" />
+            </svg>
+          </a>
+          <!-- Dropdown menu -->
+          <div id="dropdownNavbar" (mouseleave)="hideDropdown()"
+            class="z-10 hidden font-normal bg-white divide-y divide-gray-100 rounded-3xl shadow w-44 absolute top-[3.7rem]">
+            <ul class="py-2 px-5 text-sm text-gray-700" aria-labelledby="dropdownLargeButton">
+              @for (dropdownOption of link.dropdownOptions; track $index) {
+              <li>
+                <a href="{{ dropdownOption.url }}"
+                  class="flex items-center gap-x-6 py-4 px-3 min-w-full hover:bg-gray-100">
+                  <img src="{{ dropdownOption.icon }}" alt="{{ dropdownOption.label }}" />
+                  <span>{{ dropdownOption.label }}</span>
+                </a>
+              </li>
+              }
+            </ul>
+          </div>
+        </li>
+        } }
+      </ul>
+    </div>
+  </div>
+</nav>

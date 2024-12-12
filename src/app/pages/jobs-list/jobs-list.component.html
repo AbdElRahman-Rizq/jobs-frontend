@@ -1,0 +1,164 @@
+<div class="main">
+  <app-navbar />
+
+  <div class="outer-container">
+    <div class="white-container">
+
+
+
+
+      <div class="inner-container">
+        <!-------------- first part -------------->
+        <div class="first-part">
+          <p class="text-[#6941C6] text-sm font-medium"> {{selectedCategory == 'All' ? 'Jobbörse' : selectedCategory |
+            titlecase}}</p>
+
+          <p class="text-[#101828] text-3xl md:text-4xl font-semibold mb-5 mt-6">
+            Finde deine ideale Karriere bei uns!
+          </p>
+
+          <p class="text-[#475467] text-xl font-normal leading-[30px] mx-auto">
+            Suchst du nach neuen Herausforderungen, möchtest dein Fachwissen
+            erweitern, <br />
+            deine Fähigkeiten einsetzen oder erste Berufserfahrungen sammeln?
+          </p>
+
+          <a href="https://www.fairsolutions-aachen.de/kontakt/"
+            class="text-light-green text-xl font-bold no-underline">
+            Dann kontaktiere uns jetzt!
+          </a>
+        </div>
+
+        @if(!loading){
+        <div class="text-center">
+          <div role="status">
+            <svg aria-hidden="true"
+              class="inline w-12 h-12 text-gray-200 animate-spin dark:text-gray-600 fill-secondary-color"
+              viewBox="0 0 100 101" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path
+                d="M100 50.5908C100 78.2051 77.6142 100.591 50 100.591C22.3858 100.591 0 78.2051 0 50.5908C0 22.9766 22.3858 0.59082 50 0.59082C77.6142 0.59082 100 22.9766 100 50.5908ZM9.08144 50.5908C9.08144 73.1895 27.4013 91.5094 50 91.5094C72.5987 91.5094 90.9186 73.1895 90.9186 50.5908C90.9186 27.9921 72.5987 9.67226 50 9.67226C27.4013 9.67226 9.08144 27.9921 9.08144 50.5908Z"
+                fill="currentColor" />
+              <path
+                d="M93.9676 39.0409C96.393 38.4038 97.8624 35.9116 97.0079 33.5539C95.2932 28.8227 92.871 24.3692 89.8167 20.348C85.8452 15.1192 80.8826 10.7238 75.2124 7.41289C69.5422 4.10194 63.2754 1.94025 56.7698 1.05124C51.7666 0.367541 46.6976 0.446843 41.7345 1.27873C39.2613 1.69328 37.813 4.19778 38.4501 6.62326C39.0873 9.04874 41.5694 10.4717 44.0505 10.1071C47.8511 9.54855 51.7191 9.52689 55.5402 10.0491C60.8642 10.7766 65.9928 12.5457 70.6331 15.2552C75.2735 17.9648 79.3347 21.5619 82.5849 25.841C84.9175 28.9121 86.7997 32.2913 88.1811 35.8758C89.083 38.2158 91.5421 39.6781 93.9676 39.0409Z"
+                fill="currentFill" />
+            </svg>
+            <span class="sr-only">Loading...</span>
+          </div>
+        </div>
+        }
+        <!-------------- second part (jobs list) -------------->
+        @else {
+
+        <div class="second-part">
+          <!-- <div class="ms-auto">
+
+            <button id="dropdownMenuIconButton" data-dropdown-toggle="dropdownDots"
+              class="inline-flex items-center p-2 text-sm font-medium text-center text-gray-900 bg-white rounded-lg hover:bg-gray-100 focus:ring-4 focus:outline-none dark:text-white focus:ring-gray-50 dark:bg-gray-800 dark:hover:bg-gray-700 dark:focus:ring-gray-600"
+              type="button">
+
+              <span class="px-3 text-gray-800 text-2xl">Branchen</span>
+
+              <svg class="w-8 h-8 text-gray-800" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24"
+                height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                  d="M18 6H6m12 4H6m12 4H6m12 4H6" />
+              </svg>
+
+            </button>
+
+            <div id="dropdownDots"
+              class="z-10 hidden bg-white divide-y divide-gray-100 rounded-lg shadow w-44 dark:bg-gray-700 dark:divide-gray-600">
+              <ul class="py-2 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownMenuIconButton">
+                <li>
+                  <a (click)="findJobByCategory('All')"
+                    class="cursor-pointer block px-4 py-2 hover:bg-light-green hover:text-white">All</a>
+                </li>
+                @for (category of categories; track $index) {
+                <li>
+                  <a (click)="findJobByCategory(category)"
+                    class="cursor-pointer block px-4 py-2 hover:bg-light-green hover:text-white">{{ category | titlecase
+                    }}</a>
+                </li>
+                }
+
+              </ul>
+
+            </div>
+
+          </div> -->
+
+
+          <div class=" mx-auto md:min-w-[700px] w-full">
+            <label for="default-search"
+              class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+              <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                <svg class="w-4 h-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                  <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                    d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                </svg>
+              </div>
+              <input #search (input)="searchJobs(search.value)" name="search" type="search" id="default-search"
+                class="block w-full p-4 ps-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-light-green focus:border-light-green "
+                placeholder="Job suchen" required />
+              <button type="button" (click)="searchJobs(search.value)"
+                class="text-white absolute end-2.5 bottom-2.5 bg-light-green hover:bg-light-green-hover  focus:ring-4 focus:outline-none focus:ring-light-green font-medium rounded-lg text-sm px-4 py-2 ">Suchen</button>
+            </div>
+          </div>
+
+
+
+
+          @for (job of selectedJobs; track $index) {
+          <div class="border border-[#EAECF0] rounded-[32px] p-[20px]">
+            <p class="text-[18px] font-medium mb-2">{{ job.jobTitle }}</p>
+
+            <p [innerHTML]="job.jobSummary" class="text-base font-normal text-[#475467]">
+              <!-- {{ job.jobSummary }} -->
+            </p>
+
+            <div class="mt-6 flex w-full justify-end gap-x-3">
+              <a class="button-link" [routerLink]="['/', job.jobId]" [state]="job">Mehr Infos</a>
+              <a class="button-link" href="{{ job.applicationForm }}">Bewerben</a>
+            </div>
+          </div>
+          }
+
+          <!-------------- pagination -------------->
+          <!-- <nav class="mx-auto">
+            <ul class="inline-flex -space-x-px text-base h-10">
+              <li>
+                <a href="#"
+                  class="flex items-center justify-center px-4 h-10 ms-0 leading-tight text-gray-500 bg-white border border-e-0 border-gray-300 rounded-s-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Zurück</a>
+              </li>
+              <li>
+                <a href="#"
+                  class="flex items-center justify-center px-4 h-10 leading-tight text-gray-500 bg-white border border-gray-300 rounded-e-lg hover:bg-gray-100 hover:text-gray-700 dark:bg-gray-800 dark:border-gray-700 dark:text-gray-400 dark:hover:bg-gray-700 dark:hover:text-white">Weiter</a>
+              </li>
+            </ul>
+          </nav> -->
+        </div>
+        }
+
+        <!-------------- third part -------------->
+        <div class="third-part">
+          <p class="text-[#C43A49] text-4xl font-semibold">
+            Werde Teil von fair solutions
+          </p>
+
+          <p class="text-[#475467] text-lg mt-4 mb-8">
+            Nichts passendes gefunden? Bewirb dich direkt bei uns und gerne
+            helfen wir dir weiter!
+          </p>
+
+          <a href="https://www.fairsolutions-aachen.de/fragebogen/"
+            class="text-2xl text-white font-bold bg-light-green rounded-lg p-[12px_20px_12px_20px] hover:bg-secondary-color transition-all">Initiativbewerbung</a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <app-footer />
+</div>

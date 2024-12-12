@@ -1,0 +1,17 @@
+.position-id-container {
+  background: rgba(245, 251, 255, 0.6);
+  background-size: auto 50%;
+  @apply block w-full py-[20px] mb-[135px] leading-[1.2] rounded-[20px] text-[#3c3c3c] text-[1.4rem] text-center;
+}
+
+.position-id-icon {
+  @apply inline-block h-[4.3rem] mr-[15px] align-middle;
+}
+
+.position-id-text-container {
+  @apply inline-block text-left align-middle;
+}
+
+.position-id-title {
+    @apply block text-dark-red text-[1.1rem] font-normal;
+}

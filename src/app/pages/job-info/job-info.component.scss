@@ -1,0 +1,37 @@
+.page {
+  @apply m-0 p-0 font-roboto;
+}
+
+.main {
+  @apply relative w-full;
+}
+
+.btn {
+  @apply block bg-[#C43B49] absolute top-[570px] md:top-[750px]  left-1/2 ml-[-145px] md:ml-[-210px] w-[300px] md:w-[450px] py-[20px] md:py-[30px] text-[28px] md:text-[45px] leading-[1] z-10;
+}
+
+.second-part {
+  @apply relative overflow-hidden;
+}
+
+// .blurred-background {
+//   @apply fixed top-0 right-0 bottom-0 left-0 w-full h-full z-[-1] bg-[url('https://jobs.dahmen-personal.de/CustomImage/02f2b478-2762-42f9-a7cc-2c347e0816c0/image.png?width=1440&format=jpeg')] bg-cover bg-no-repeat bg-center blur-[20px];
+// }
+
+.blurred-background {
+  @apply fixed top-0 right-0 bottom-0 left-0 w-full h-full z-[-1] blur-[20px];
+  background: #ffffff;
+}
+
+.content {
+  background: rgba(245, 251, 255, 0.5);
+  @apply w-full h-full max-w-[1440px] mx-auto py-[100px] pb-0;
+}
+
+.main-container {
+  @apply flex flex-col md:flex-row justify-between w-[90%] mx-auto;
+}
+
+.right-container {
+  @apply w-full md:w-[30%] mt-[50px] md:mt-0;
+}

@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import '../node_modules/@fortawesome/fontawesome-free/css/all.min.css';
+
+// #region job-info
+.btn,
+.linkbtn,
+.linkbtn2,
+.linkbtn-mobile,
+.linkbtn2-mobile,
+.link-button-link {
+  @apply bg-light-green text-white font-bold text-center no-underline rounded-[20px] transition duration-[0.5s] delay-0;
+}
+
+.linkbtn:hover,
+.linkbtn2:hover,
+.linkbtn-mobile:hover,
+.linkbtn2-mobile:hover,
+.btn:hover {
+  background-color: white !important;
+  @apply text-light-green;
+}
+// #endregion

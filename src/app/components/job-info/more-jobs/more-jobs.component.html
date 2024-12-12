@@ -1,0 +1,45 @@
+<div class="jobs">
+  <h2>WEITERE JOBS</h2>
+
+  <div class="cards-container">
+    @for (job of _jobs; track $index) {
+    <div class="card" style="width: 30%">
+      <a routerLink="/{{ job.jobId }}" [state]="job" rel="noopener">
+        <strong class="job-title"> {{ job.jobTitle }} </strong>
+
+        <ul style="list-style: none; padding: 0; margin: 0">
+          <!---------- location ---------->
+          <li class="job-detail">
+            <svg class="card-icons" xmlns="http://www.w3.org/2000/svg" height="32" width="24" viewBox="0 0 384 512">
+              <path fill="currentColor"
+                d="M215.7 499.2C267 435 384 279.4 384 192C384 86 298 0 192 0S0 86 0 192c0 87.4 117 243 168.3 307.2c12.3 15.3 35.1 15.3 47.4 0zM192 128a64 64 0 1 1 0 128 64 64 0 1 1 0-128z" />
+            </svg>
+
+            <div class="job-detail-text">
+              <span class="card-small-text">Ort</span>
+              {{ job.jobWorkplace }}
+            </div>
+          </li>
+
+          <!---------- employment type ---------->
+          <li class="job-detail">
+            <svg class="card-icons" xmlns="http://www.w3.org/2000/svg" height="32" width="40" viewBox="0 0 640 512">
+              <path fill="currentColor"
+                d="M184 48l144 0c4.4 0 8 3.6 8 8l0 40L176 96l0-40c0-4.4 3.6-8 8-8zm-56 8l0 40L64 96C28.7 96 0 124.7 0 160l0 96 192 0 160 0 8.2 0c32.3-39.1 81.1-64 135.8-64c5.4 0 10.7 .2 16 .7l0-32.7c0-35.3-28.7-64-64-64l-64 0 0-40c0-30.9-25.1-56-56-56L184 0c-30.9 0-56 25.1-56 56zM320 352l-96 0c-17.7 0-32-14.3-32-32l0-32L0 288 0 416c0 35.3 28.7 64 64 64l296.2 0C335.1 449.6 320 410.5 320 368c0-5.4 .2-10.7 .7-16l-.7 0zm320 16a144 144 0 1 0 -288 0 144 144 0 1 0 288 0zM496 288c8.8 0 16 7.2 16 16l0 48 32 0c8.8 0 16 7.2 16 16s-7.2 16-16 16l-48 0c-8.8 0-16-7.2-16-16l0-64c0-8.8 7.2-16 16-16z" />
+            </svg>
+
+            <div class="job-detail-text">
+              <span class="card-small-text">Anstellungsart</span>
+              {{ job.jobEmploymentType }}
+            </div>
+          </li>
+        </ul>
+
+        <p class="published">Veröffentlicht: {{ job.jobPublishingDateFrom | date }}</p>
+
+        <span class="link-bottom"> Job ansehen </span>
+      </a>
+    </div>
+    }
+  </div>
+</div>

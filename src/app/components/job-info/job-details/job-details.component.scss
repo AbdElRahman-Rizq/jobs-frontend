@@ -1,0 +1,15 @@
+.details-container {
+  @apply bg-dark-gray text-white text-center text-[1rem] leading-[1.1] py-[65px] px-[15px] mb-[30px];
+}
+
+.details-title {
+  @apply inline-block uppercase text-[1.5rem] font-medium mb-[30px] border-b-4 border-dotted py-[3px];
+}
+
+.detail-small-title {
+  @apply text-light-green font-bold text-[1.2rem];
+}
+
+.detail-text {
+  @apply text-[1.1rem] my-5;
+}

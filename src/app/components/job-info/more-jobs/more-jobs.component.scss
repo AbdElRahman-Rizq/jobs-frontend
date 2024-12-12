@@ -1,0 +1,55 @@
+.jobs {
+  @apply max-w-full md:max-w-[1440px] mx-[15px] md:mx-auto px-[30px] md:px-[70px] py-[40px] md:py-[70px];
+}
+
+.jobs h2 {
+  @apply text-[2.22rem] font-bold text-center md:text-left text-dark-red uppercase mb-[25px];
+}
+
+.cards-container {
+  @apply grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10 justify-between;
+}
+
+.card {
+  background-color: rgba(245, 251, 255, 0.6);
+  @apply min-w-full flex flex-col justify-between shadow-lg;
+}
+
+.card a {
+  @apply relative w-full h-full px-[27px] py-[30px] text-[1rem] text-[#1d1d1b] leading-[1.2] no-underline;
+}
+
+.card:hover .link-bottom {
+  @apply bg-dark-red;
+}
+
+.job-title {
+  @apply block text-secondary-color text-[30px];
+}
+
+.job-detail {
+  width: calc(100% - 30px);
+  @apply flex items-center gap-x-2 my-[35px] align-middle;
+}
+
+.job-detail-text {
+  @apply text-[18px];
+}
+
+.card-icons {
+  @apply text-secondary-color w-[40px];
+}
+
+.card-small-text {
+  @apply block text-dark-red text-[14px] font-normal mb-[3px];
+}
+
+.published {
+  @apply block text-[1.15rem] text-secondary-color mt-[20px] mb-[70px];
+}
+
+.link-bottom {
+  background: #314851 url(https://jobs.dahmen-personal.de/Dahmen_Stellenanzeige/images/arrow.svg) 95% 50% no-repeat;
+  background-size: 17px;
+  @apply absolute block bottom-0 right-0 left-0 w-full py-[15px] pl-[15px] text-[1rem] text-white transition duration-[0.5s] delay-0;
+}

@@ -1,0 +1,17 @@
+.nav-link {
+  @apply text-[#33373d] font-semibold lg:text-white text-lg lg:text-[16px] px-[15px] py-[13px] lg:py-[6px] bg-white lg:bg-transparent block;
+}
+
+.nav-link:hover,
+.navlink-dropdown:hover {
+  @apply bg-[#101828] bg-opacity-50 rounded-lg transition duration-[0.5s] delay-0;
+}
+
+.nav-link-active,
+.nav-link-active:hover {
+  @apply bg-[#101828] text-white rounded-lg;
+}
+
+.navlink-dropdown {
+  @apply relative flex items-center lg:justify-between w-full font-semibold text-lg lg:text-[16px] px-[15px] py-[13px] lg:py-[6px] text-[#33373d] lg:text-white;
+}
