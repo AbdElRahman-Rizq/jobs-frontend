@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { JobPosting } from '../models/Job-posting';
+import { environment } from '../../../environment.prod';
 
 @Injectable({
   providedIn: 'root',
@@ -37,9 +38,9 @@ export class JobsService {
     'https://ik.imagekit.io/naidimg/uploads/20241120_fairsolutions_Header_allgemein_v3.png?updatedAt=1732890090805';
 
   constructor(private http: HttpClient) {}
-
+  private apiUrl = environment.apiUrl;
   getJobs(): Observable<JobPosting[]> {
-    return this.http.get<JobPosting[]>('/api/get-jobs');
+    return this.http.get<JobPosting[]>(`${this.apiUrl}/api/get-jobs`);
   }
 
   private containsSubstring(text: string, substring: string): boolean {
