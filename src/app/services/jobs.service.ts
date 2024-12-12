@@ -39,7 +39,7 @@ export class JobsService {
   constructor(private http: HttpClient) {}
 
   getJobs(): Observable<JobPosting[]> {
-    return this.http.get<JobPosting[]>('https://45.9.191.214:5000/api/get-jobs');
+    return this.http.get<JobPosting[]>('http://45.9.191.214:5000/api/get-jobs');
   }
 
   private containsSubstring(text: string, substring: string): boolean {
