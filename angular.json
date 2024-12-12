@@ -62,14 +62,12 @@
             "configurations": {
               "production": {
                 "buildTarget": "jobs-frontend:build:production"
+                ,"proxyConfig": "src/proxy.conf.json"
               },
               "development": {
                 "buildTarget": "jobs-frontend:build:development"
               }
-            },
-            "options": {
-              "proxyConfig": "src/proxy.conf.json"
-            },
+            },         
             "defaultConfiguration": "development"
           },
           "extract-i18n": {
