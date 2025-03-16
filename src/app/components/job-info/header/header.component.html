@@ -1,6 +1,9 @@
 <div class="relative overflow-hidden">
   <!----------- background image ----------->
-  <div class="header-bg" [ngStyle]="{'background-image': 'url(' + image + ')'}">
+  <div
+    class="header-bg"
+    [ngStyle]="{ 'background-image': 'url(' + image + ')' }"
+  >
     <!----------------- logo ----------------->s
     <!-- <a href="https://dahmen-personal.de/" target="_blank" rel="noopener">
       <img
@@ -12,7 +15,7 @@
 
     <!-------------- bottom part ------------->
     <div class="header-buttom-background">
-      <h1 class="header-title">{{title}}</h1>
+      <h1 class="header-title">{{ title }}</h1>
 
       <!------ features ------>
       <ul class="features-list">
@@ -22,7 +25,7 @@
 
           <div>
             <span class="feature-small-text">{{ feature.smallText }}</span>
-            {{ feature.text }}
+            <div [innerHTML]="feature.text"></div>
           </div>
         </li>
         }

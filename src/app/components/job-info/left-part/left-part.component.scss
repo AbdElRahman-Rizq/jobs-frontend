@@ -11,25 +11,21 @@
   @apply relative bg-dark-red text-white py-[25px] px-[40px];
 }
 
-// .title {
-//   @apply inline-block border-b-4 border-dotted uppercase font-semibold text-[1.32rem] mb-5;
-// }
+.title {
+  @apply inline-block border-b-4 border-dotted uppercase font-semibold text-[1.32rem] mb-5;
+}
 
-// .offer {
-//   @apply flex items-start gap-x-[13px] mb-[12px];
-// }
+.benefits-list {
+  @apply list-disc pl-[20px] m-0;
+}
 
 .your-section {
   @apply relative py-[25px] px-[40px];
 }
 
-// .list {
-//   @apply list-disc pl-[20px] m-0;
-// }
-
-// .list li::marker {
-//   @apply text-dark-red;
-// }
+.list {
+  @apply list-disc pl-[20px] m-0;
+}
 
 .paragraphs {
   @apply relative px-[40px] pt-[25px] pb-[35px] flex flex-col gap-y-6;

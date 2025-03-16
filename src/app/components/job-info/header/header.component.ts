@@ -6,7 +6,7 @@ import { Component, Input, input, OnInit } from '@angular/core';
   standalone: true,
   imports: [CommonModule],
   templateUrl: './header.component.html',
-  styleUrl: './header.component.scss'
+  styleUrl: './header.component.scss',
 })
 export class HeaderComponent implements OnInit {
   features: any[] = [];
@@ -40,6 +40,7 @@ export class HeaderComponent implements OnInit {
         id: 4,
         icon: 'https://jobs.dahmen-personal.de/Image/LayoutVorlageBenefit/99edcba0-5476-4708-8e82-4dc9d2b691c5?240821020143750',
         smallText: 'Benefit',
+        // text: `${this.jobBenefits}`,
         text: 'Firmenevents',
       },
       {
@@ -55,13 +56,15 @@ export class HeaderComponent implements OnInit {
         smallText: 'Benefit',
         text: 'Krisensicherer Arbeitsplatz',
       },
-    ]
+    ];
   }
-  @Input() title: string = ''
-  @Input() location: string = ''
-  @Input() salaryFrom: string = ''
-  @Input() salaryTo: string = ''
-  @Input() jobType: string = ''
+  @Input() title: string = '';
+  @Input() location: string = '';
+  @Input() salaryFrom: string = '';
+  @Input() salaryTo: string = '';
+  @Input() jobType: string = '';
   @Input() image: string = '';
-
+  @Input() jobBenefits: string = '';
 }
+
+// "jobBenefits": "<span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"font-family:Arial,sans-serif\"><b><span style=\"font-size:18.0pt\"><span >Unsere Leistungen:</span></span></b></span></span></span> <div style=\"margin:0cm 0cm 8pt\"> </div> <ul> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >Pers\u00f6nliche Betreuung</span></span></span></span></span></li> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >H\u00f6chste Anspr\u00fcche in der Arbeitssicherheit</span></span></span></span></span></li> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >F\u00f6rderung durch Schulungen und Weiterbildungen</span></span></span></span></span></li> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >Unbefristeter Arbeitsvertrag</span></span></span></span></span></li> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >\u00dcbertarifliche Verg\u00fctung</span></span></span></span></span></li> <li style=\"margin:0cm 0cm 8pt\"><span style=\"font-size:12pt\"><span style=\"line-height:normal\"><span style=\"tab-stops:list 36.0pt\"><span style=\"font-family:Arial,sans-serif\"><span >Verm\u00f6genswirksame Leistungen ab dem ersten Tag</span></span></span></span></span></li> </ul>",
